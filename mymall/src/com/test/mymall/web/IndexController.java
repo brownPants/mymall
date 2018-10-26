@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class IndexController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("IndexController.doGet");
+		System.out.println("IndexController.doGet()");
 		request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request, response);
 	}
 
