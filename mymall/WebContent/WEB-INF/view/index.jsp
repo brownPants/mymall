@@ -9,12 +9,18 @@
 <body>
 	<h1>index</h1>
 	<c:if test="${loginMember != null}">
-		${loginMember}님 반갑습니다.
-		<a href="">로그아웃</a>
+		<c:if test="${loginMember.level == 0}">
+			${loginMember.id} 관리자님 반갑습니다. <br>
+			<a href="${pageContext.request.contextPath}/LogoutController">로그아웃</a>
+		</c:if>
+		<c:if test="${loginMember.level == 1}">
+			${loginMember.id} 고객님 반갑습니다. <br>
+			<a href="${pageContext.request.contextPath}/LogoutController">로그아웃</a>
+		</c:if>
 	</c:if>
 	<c:if test="${loginMember == null}">
 		<a href="${pageContext.request.contextPath}/LoginController">로그인</a>
+		<a href="${pageContext.request.contextPath}/AddMemberController">회원가입</a>
 	</c:if>
-	<a href="${pageContext.request.contextPath}/AddMemberController">회원가입</a>
 </body>
 </html>

@@ -33,12 +33,8 @@ public class AddMemberController extends HttpServlet {
 		member.setPw(pw);
 		member.setLevel(Integer.parseInt(level));
 		this.memberDao=new MemberDao();
-		try {
-			this.memberDao.insertMember(member);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		response.sendRedirect(request.getContextPath()+"/login");	
+		this.memberDao.insertMember(member);
+		response.sendRedirect(request.getContextPath()+"/LoginController");	
 	}
 
 }
