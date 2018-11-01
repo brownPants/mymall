@@ -1,11 +1,17 @@
 package com.test.mymall.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MemberItemDao {
+	
+	public void deleteMemberItem(Connection conn, int no) throws SQLException {
+		PreparedStatement stmt=conn.prepareStatement("");
+	}
 	// MemberItem INNER JOIN item
 	public ArrayList<HashMap<String, Object>> getMemberItemList(int MemberNO) throws SQLException {
 		ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
