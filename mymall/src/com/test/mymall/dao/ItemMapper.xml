@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.mymall.dao.ItemMapper">
+	<select id="selectItemListCount" resultType="int">
+		SELECT 
+			COUNT(*) 
+		FROM mall.item
+	</select>
+	<select id="selectItemList" parameterType="hashMap" resultType="com.test.mymall.vo.Item">
+	SELECT 
+		no, name, price
+	FROM mall.item ORDER BY no DESC LIMIT #{startRow}, #{pagePerRow}
+	</select>
+</mapper>

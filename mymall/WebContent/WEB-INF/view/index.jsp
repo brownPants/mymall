@@ -12,12 +12,12 @@
 		<c:if test="${loginMember.level == 0}">
 			${loginMember.id} 관리자님 반갑습니다. <br>
 			<a href="${pageContext.request.contextPath}/LogoutController">로그아웃</a>
-			<a href="${pageContext.request.contextPath}/ItemListController">주문목록</a>
+			<a href="${pageContext.request.contextPath}/ItemListController">상품목록</a>
 		</c:if>
 		<c:if test="${loginMember.level == 1}">
 			${loginMember.id} 고객님 반갑습니다. <br>
 			<a href="${pageContext.request.contextPath}/LogoutController">로그아웃</a>
-			<a href="${pageContext.request.contextPath}/ItemListController">주문목록</a>
+			<a href="${pageContext.request.contextPath}/ItemListController">상품목록</a>
 		</c:if>
 	</c:if>
 	<c:if test="${loginMember == null}">

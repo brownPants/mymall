@@ -20,7 +20,7 @@
 				<td>${item.no}</td>
 				<td>${item.name}</td>
 				<td>${item.price}</td>
-				<td><button type="button">주문</button></td>
+				<td><a href="<%=request.getContextPath()%>/OrderController?itemNo=${item.no}"><button type="button">주문</button></a></td>
 			</tr>
 		</c:forEach>
 	</table>
