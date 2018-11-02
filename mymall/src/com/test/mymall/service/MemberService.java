@@ -44,8 +44,8 @@ public class MemberService {
 		Member resultMember=null;
 		try {
 			conn=DBHelper.getConnection();
-			memberDao=new MemberDao();
-			resultMember=memberDao.login(conn, member);
+			this.memberDao=new MemberDao();
+			resultMember=this.memberDao.login(conn, member);
 		} catch(Exception e) {
         	e.printStackTrace();
         } finally {
@@ -59,8 +59,8 @@ public class MemberService {
 		Connection conn=null;
 		try {
 			conn=DBHelper.getConnection();
-			memberDao=new MemberDao();
-			memberDao.insertMember(conn, member);
+			this.memberDao=new MemberDao();
+			this.memberDao.insertMember(conn, member);
 		} catch(Exception e) {
         	e.printStackTrace();
         } finally {
