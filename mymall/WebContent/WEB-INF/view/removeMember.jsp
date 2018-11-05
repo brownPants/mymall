@@ -6,13 +6,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>login Form</h2>
-	<form action="<%=request.getContextPath()%>/LoginController" method="post">
+	<h2>RemoveMember Form</h2>
+	<form action="<%=request.getContextPath()%>/RemoveMemberController" method="post">
 		<table border="1">
-			<tr>
-				<td>아이디</td>
-				<td><input type="text" name="id"></td>
-			</tr>
 			<tr>
 				<td>비밀번호</td>
 				<td><input type="password" name="pw"></td>
@@ -21,7 +17,7 @@
 		<div>
 			<a href="<%=request.getContextPath()%>/IndexController">
 				<button type="button">취소</button></a>
-			<input type="submit" value="로그인">
+			<input type="submit" value="회원탈퇴">
 		</div>
 	</form>
 </body>

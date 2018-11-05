@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>addMember Form</h2>
+	<h2>AddMember Form</h2>
 	<form action="<%=request.getContextPath()%>/AddMemberController" method="post">
 		<table border="1">
 			<tr>
@@ -15,7 +15,7 @@
 			</tr>
 			<tr>
 				<td>비밀번호</td>
-				<td><input type="text" name="pw"></td>
+				<td><input type="password" name="pw"></td>
 			</tr>
 			<tr>
 				<td>권한</td>

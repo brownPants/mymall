@@ -14,6 +14,5 @@ public class IndexController extends HttpServlet {
 		System.out.println("IndexController.doGet()");
 		request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request, response);
 	}
-	
 
 }

@@ -1,7 +1,5 @@
 package com.test.mymall.dao;
 
-import java.sql.Connection;
-
 import org.apache.ibatis.session.SqlSession;
 
 import com.test.mymall.vo.Member;
@@ -15,8 +13,9 @@ public class MemberDao {
 		return sqlSession.selectOne("com.test.mymall.dao.MemberMapper.login", member);
 	}
 	// 회원탈퇴 처리
-	public void deleteMember(Connection conn, int no) {	
+	public void deleteMember(SqlSession sqlSession, Member member) {	
 		System.out.println("MemberDao deleteMember");
+		sqlSession.delete("com.test.mymall.dao.MemberMapper.deleteMember", member);
 	}
 	// 회원가입 입력처리
 	public void insertMember(SqlSession sqlSession, Member member) {

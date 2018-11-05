@@ -11,6 +11,12 @@
 	<select id="login" parameterType="com.test.mymall.vo.Member" resultType="com.test.mymall.vo.Member">
 		SELECT 
 			no, id, pw, level
-		FROM mall.member WHERE id = #{id} AND pw = #{pw}
+		FROM mall.member 
+		WHERE id=#{id} AND pw=#{pw}
 	</select>
+	<delete id ="deleteMember" parameterType="com.test.mymall.vo.Member">
+		DELETE 
+		FROM mall.member
+		WHERE id=#{id} AND pw=#{pw}
+	</delete>
 </mapper>

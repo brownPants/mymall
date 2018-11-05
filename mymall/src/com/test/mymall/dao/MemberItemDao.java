@@ -9,7 +9,10 @@ import com.test.mymall.vo.MemberItem;
 
 public class MemberItemDao {
 	
-	public void deleteMemberItem(SqlSession sqlSession, int no) {
+	// 회원 탈퇴 시 주문 삭제 처리
+	public void deleteMemberItem(SqlSession sqlSession, int memberNo) {
+		System.out.println("MemberItemDao deleteMemberItem");
+		sqlSession.delete("com.test.mymall.dao.MemberItemMapper.deleteMemberItem", memberNo);
 	}
 	// 주문 리스트 처리
 	// MemberItem INNER JOIN item
