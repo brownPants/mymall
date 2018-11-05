@@ -1,7 +1,5 @@
 package com.test.mymall.dao;
 
-
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -12,7 +10,7 @@ import com.test.mymall.vo.Item;
 public class ItemDao {
 	
 	//상품 리스트 처리
-	public List<Item> selectItemList(SqlSession sqlSession, HashMap<String, Object> map) throws SQLException {
+	public List<Item> selectItemList(SqlSession sqlSession, HashMap<String, Object> map) {
 		System.out.println("MemberDao selectItemList");
 		return sqlSession.selectList("com.test.mymall.dao.ItemMapper.selectItemList", map);
 	}

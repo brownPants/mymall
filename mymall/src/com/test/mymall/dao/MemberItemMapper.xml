@@ -8,4 +8,19 @@
 			(member_no, item_no, order_date)
 		VALUES (#{memberNo}, #{itemNo}, now())
 	</insert>
+	<select id="selectMemberItemListCount" parameterType="int" resultType="int">
+		SELECT 
+			COUNT(*) 
+		FROM member_item mi INNER JOIN item i
+		ON mi.item_no = i.no
+		WHERE mi.member_no = #{memberNo}
+	</select>
+	<select id="selectMemberItemList" parameterType="hashMap" resultType="hashMap">
+		SELECT 
+			mi.no, mi.order_date as orderDate, mi.item_no as itemNo, i.name, i.price
+		FROM member_item mi INNER JOIN item i
+		ON mi.item_no = i.no
+		WHERE mi.member_no = #{memberNo}
+		ORDER BY no DESC LIMIT #{startRow}, #{pagePerRow}
+	</select>
 </mapper>

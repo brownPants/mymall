@@ -11,6 +11,7 @@
 	<select id="selectItemList" parameterType="hashMap" resultType="com.test.mymall.vo.Item">
 	SELECT 
 		no, name, price
-	FROM mall.item ORDER BY no DESC LIMIT #{startRow}, #{pagePerRow}
+	FROM mall.item 
+	ORDER BY no DESC LIMIT #{startRow}, #{pagePerRow}
 	</select>
 </mapper>
