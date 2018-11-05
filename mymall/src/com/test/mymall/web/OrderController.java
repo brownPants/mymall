@@ -23,13 +23,11 @@ public class OrderController extends HttpServlet {
 		Member member=(Member)request.getSession().getAttribute("loginMember");
 		int memberNo=member.getNo();
 		int itemNo=Integer.parseInt(request.getParameter("itemNo"));
-		System.out.println("OrderController doGet()"+memberNo);
-		System.out.println("OrderController doGet()"+itemNo);
 		MemberItem memberItem=new MemberItem();
 		memberItem.setMemberNo(memberNo);
 		memberItem.setItemNo(itemNo);
 		this.memberItemService=new MemberItemService();
-		/*this.memberItemService.insertMemberItem(memberItem);*/
+		this.memberItemService.insertMemberItem(memberItem);
 		response.sendRedirect(request.getContextPath()+"/IndexController");
 	}
 

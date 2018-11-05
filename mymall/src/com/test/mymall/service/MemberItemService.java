@@ -2,26 +2,30 @@ package com.test.mymall.service;
 
 import java.sql.Connection;
 
+import org.apache.ibatis.session.SqlSession;
+
 import com.test.mymall.commons.DBHelper;
 import com.test.mymall.dao.MemberItemDao;
 import com.test.mymall.vo.MemberItem;
 
 public class MemberItemService {
 	
-/*	private MemberItemDao memberItemDao;
+private MemberItemDao memberItemDao;
 
 	public void insertMemberItem(MemberItem memberitem) {
 		System.out.println("MemberItemService insertMemberItem");
-		Connection conn=null;
+		SqlSession sqlSession=null;
 		try {
-			conn=DBHelper.getConnection();
+			sqlSession=DBHelper.getSqlSession();
 			this.memberItemDao=new MemberItemDao();
-			this.memberItemDao.insertMemberItem(conn, memberitem);
+			this.memberItemDao.insertMemberItem(sqlSession, memberitem);
+			sqlSession.commit();
 		} catch(Exception e) {
-        	e.printStackTrace();
+			sqlSession.rollback();
+			e.printStackTrace();
         } finally {
-        	DBHelper.close(null, null, conn);
+        	sqlSession.close();
         }
 	}
-	*/
+	
 }

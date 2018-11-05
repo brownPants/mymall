@@ -10,7 +10,7 @@
 	</insert>
 	<select id="login" parameterType="com.test.mymall.vo.Member" resultType="com.test.mymall.vo.Member">
 		SELECT 
-			id, pw, level 
+			no, id, pw, level
 		FROM mall.member WHERE id = #{id} AND pw = #{pw}
 	</select>
 </mapper>
