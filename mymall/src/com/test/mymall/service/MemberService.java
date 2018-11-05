@@ -12,6 +12,22 @@ public class MemberService {
 	private MemberDao memberDao;
 	private MemberItemDao memberItemDao;
 	
+	// 회원 정보 수정 서비스
+	public void modifyMember(Member member) {
+		System.out.println("MemberService modifyMember");
+		SqlSession sqlSession=null;
+		try {
+			sqlSession=DBHelper.getSqlSession();
+			this.memberDao=new MemberDao();
+			this.memberDao.updateMember(sqlSession, member);
+			sqlSession.commit();
+		} catch(Exception e) {
+			sqlSession.rollback();
+			e.printStackTrace();
+        } finally {
+        	sqlSession.close();
+        }
+	}
 	// 회원 탈퇴 서비스
 	// RemoveMemberController에서 MemberService.removeMember()호출
 	public void removeMember(Member member) {

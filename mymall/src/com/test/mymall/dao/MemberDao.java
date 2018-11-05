@@ -6,6 +6,11 @@ import com.test.mymall.vo.Member;
 
 public class MemberDao {
 	
+	// 회원정보 수정 처리
+	public void updateMember(SqlSession sqlSession, Member member) {
+		System.out.println("MemberDao updateMember");
+		sqlSession.update("com.test.mymall.dao.MemberMapper.updateMember", member);
+	}
 	// 로그인 실패시 -> null
 	// 로그인 성공시 -> 성공한 Member객체
 	public Member login(SqlSession sqlSession, Member member) {

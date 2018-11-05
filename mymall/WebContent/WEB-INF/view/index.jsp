@@ -11,18 +11,16 @@
 	<c:if test="${loginMember != null}">
 		<c:if test="${loginMember.level == 0}">
 			${loginMember.id} 관리자님 반갑습니다. <br>
-			<a href="${pageContext.request.contextPath}/LogoutController">로그아웃</a>
-			<a href="${pageContext.request.contextPath}/ItemListController">상품목록</a>
-			<a href="${pageContext.request.contextPath}/OrderListController">주문목록</a>
-			<a href="${pageContext.request.contextPath}/RemoveMemberController">관리자탈퇴</a>
 		</c:if>
 		<c:if test="${loginMember.level == 1}">
 			${loginMember.id} 고객님 반갑습니다. <br>
-			<a href="${pageContext.request.contextPath}/LogoutController">로그아웃</a>
-			<a href="${pageContext.request.contextPath}/ItemListController">상품목록</a>
-			<a href="${pageContext.request.contextPath}/OrderListController">주문목록</a>
-			<a href="${pageContext.request.contextPath}/RemoveMemberController">회원탈퇴</a>
 		</c:if>
+		<a href="${pageContext.request.contextPath}/LogoutController">로그아웃</a>
+		<a href="${pageContext.request.contextPath}/ItemListController">상품목록</a>
+		<a href="${pageContext.request.contextPath}/OrderListController">주문목록</a>
+		<a href="${pageContext.request.contextPath}/RemoveMemberController">회원탈퇴</a>
+		<a href="${pageContext.request.contextPath}/ModifyMemberController">정보수정</a>
+		<a href="${pageContext.request.contextPath}/DetailMemberController">회원정보</a>
 	</c:if>
 	<c:if test="${loginMember == null}">
 		<a href="${pageContext.request.contextPath}/LoginController">로그인</a>

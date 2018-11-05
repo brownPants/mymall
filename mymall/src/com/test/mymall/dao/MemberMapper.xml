@@ -14,9 +14,14 @@
 		FROM mall.member 
 		WHERE id=#{id} AND pw=#{pw}
 	</select>
-	<delete id ="deleteMember" parameterType="com.test.mymall.vo.Member">
+	<delete id="deleteMember" parameterType="com.test.mymall.vo.Member">
 		DELETE 
 		FROM mall.member
 		WHERE id=#{id} AND pw=#{pw}
 	</delete>
+	<update id="updateMember" parameterType="com.test.mymall.vo.Member">
+		UPDATE mall.member 
+		SET pw=#{pw}, level=#{level} 
+		WHERE id=#{id}
+	</update>
 </mapper>
